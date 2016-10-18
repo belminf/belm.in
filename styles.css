@@ -1,0 +1,101 @@
+/* page structure */
+html { 
+  height: 100%;
+  width: 100%;
+  background-image: url(bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: cover;
+}
+
+body {
+  font-family: 'Droid Sans', sans-serif;
+  background-color: transparent;
+}
+
+#wrapper {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* quote */
+
+#quote {
+  position: relative;
+}
+
+.quote_nav {
+  position: absolute;
+  width: 25px;
+  height: 35px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+}
+
+#quote_prev {
+  margin-left: 0;
+}
+
+#quote_next {
+  margin-right: 0;
+}
+
+.quote_content {
+  margin: 0 40px;
+}
+
+#quote_text {
+  font-family: 'Coming Soon', cursive;
+  font-size: 2em;
+  color: #fff;
+  text-shadow: 2px 2px 2px #000;
+}
+
+#quote_author {
+  font-family: 'Coming Soon', cursive;
+  font-size: 1em;
+  color: #fff;
+}
+
+
+/* links */
+#links {
+  width: 375px;
+  border-top: 2px solid #fff;
+  color: #d9d9d9;
+  padding: 10px 0;
+  margin: 32px auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 10px;
+  line-height: 32px;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+a:hover,
+a:focus {
+  color: #fff;
+}
+
+#email {
+  margin: 2px 0 0;
+}
