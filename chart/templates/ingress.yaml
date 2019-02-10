@@ -1,0 +1,22 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ include "chartName" . }}
+  annotations:
+    certmanager.k8s.io/issuer: {{ .Values.issuer | default "letsencrypt-default" }}
+spec:
+  rules:
+  {{- range .Values.hostNames }}
+  -
+    host: {{ . }}
+    http:
+      paths:
+      -
+        backend:
+          serviceName: {{ template "chartName" $ }}
+          servicePort: http
+  {{ end }}
+  tls:
+    - secretName: {{ include "chartName" . }}
+{{ include "tlsHosts" . | indent 6 }}

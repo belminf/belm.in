@@ -1,0 +1,6 @@
+Release name: '{{ .Release.Name }}'
+
+* URLs:
+{{- range .Values.hostNames }}
+  * https://{{ . }}
+{{- end }}
