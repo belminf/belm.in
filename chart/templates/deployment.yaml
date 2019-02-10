@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "chartName" . }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ include "chartName" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "chartName" . }}
+    spec:
+      containers:
+        - name: website
+          image: belminf/personal_website:latest
+          ports:
+            - containerPort: 80
