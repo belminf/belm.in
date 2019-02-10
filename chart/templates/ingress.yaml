@@ -5,6 +5,7 @@ metadata:
   name: {{ include "chartName" . }}
   annotations:
     certmanager.k8s.io/issuer: {{ .Values.issuer | default "letsencrypt-default" }}
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   rules:
   {{- range .Values.hostNames }}
