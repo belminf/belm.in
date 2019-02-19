@@ -18,3 +18,10 @@ spec:
           image: belminf/personal_website:latest
           ports:
             - containerPort: 80
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: {{ include "chartName" . }}
+            topologyKey: kubernetes.io/hostname
