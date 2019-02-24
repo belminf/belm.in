@@ -1,6 +1,0 @@
-# hostName for HTTPS
-#hostNames: 
-#  - www.belm.in
-
-# issuer for certificate
-issuer: letsencrypt-default
