@@ -1,4 +1,4 @@
-IMAGE_NAME := belminf/personal_website
+IMAGE_NAME := belminf/personal_website:latest
 DEPLOYMENT_NAME := personal-website
 
 # Build, push and deploy
@@ -14,4 +14,5 @@ push:
 
 # Update the deployment to trigger pod recreation
 update-deployment:
-	kubectl rollout restart deployment $(DEPLOYMENT_NAME)
+	kubectl scale deployment $(DEPLOYMENT_NAME) --replicas=0 && \
+	kubectl scale deployment $(DEPLOYMENT_NAME) --replicas=2
